@@ -23,6 +23,7 @@
     <modules>
         <module>spring-jdbc-template</module>
         <module>spring-data-jpa</module>
+        <module>spring-annotation</module>
     </modules>
 
     <dependencyManagement>
