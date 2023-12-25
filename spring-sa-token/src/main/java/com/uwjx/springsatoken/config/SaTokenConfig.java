@@ -1,32 +1,23 @@
 package com.uwjx.springsatoken.config;
 
+import cn.dev33.satoken.interceptor.SaInterceptor;
 import cn.dev33.satoken.stp.StpInterface;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Configuration
 @Slf4j
-public class SaTokenConfig implements StpInterface {
-    @Override
-    public List<String> getPermissionList(Object o, String s) {
-        log.warn("==查询权限==");
-        List<String> permission = new ArrayList<>();
-        permission.add("user.*");
-        permission.add("book.delete");
-        permission.add("book.query");
-        return permission;
-    }
+public class SaTokenConfig  implements WebMvcConfigurer {
 
     @Override
-    public List<String> getRoleList(Object o, String s) {
-        log.warn("==查询角色==");
-        List<String> roles = new ArrayList<>();
-        roles.add("admin");
-        roles.add("woker");
-        roles.add("system.*");
-        return roles;
+    public void addInterceptors(InterceptorRegistry registry) {
+        // 注册 Sa-Token 拦截器，打开注解式鉴权功能
+        log.warn("注册 Sa-Token 拦截器，打开注解式鉴权功能");
+        registry.addInterceptor(new SaInterceptor()).addPathPatterns("/**");
     }
 }

@@ -25,6 +25,11 @@ public class CheckController {
         }
     }
 
+    @GetMapping(value = "checkPermission")
+    public void checkPermission(@RequestParam("permission") String permission) {
+        StpUtil.checkPermission(permission);
+    }
+
     @GetMapping(value = "role")
     public String role(@RequestParam("role") String role) {
         if (StpUtil.isLogin()) {
