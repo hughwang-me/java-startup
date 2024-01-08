@@ -25,6 +25,7 @@
         <module>spring-data-jpa</module>
         <module>spring-annotation</module>
         <module>spring-sa-token</module>
+        <module>spring-mvc</module>
     </modules>
 
     <dependencyManagement>
