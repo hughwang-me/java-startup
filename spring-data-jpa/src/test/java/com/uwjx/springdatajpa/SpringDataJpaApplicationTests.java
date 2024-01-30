@@ -11,10 +11,11 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.util.Assert;
 
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 @SpringBootTest
 @Slf4j
@@ -22,7 +23,17 @@ class SpringDataJpaApplicationTests {
 
     @Autowired
     ClassroomRepository classroomRepository;
+    @Autowired
+    NamedParameterJdbcTemplate jdbcTemplate;
 
+    @Test
+    void NamedParameterJdbcTemplate() {
+        String sqlString = "select * from classroom where room like :room";
+        Map<String , Object> paramsMap = new HashMap<>();
+        paramsMap.put("room" , "%5%");
+        List<Classroom> classrooms = jdbcTemplate.query(sqlString , paramsMap , BeanPropertyRowMapper.newInstance(Classroom.class));
+        log.warn("查询结果:{}", JSON.toJSONString(classrooms));
+    }
 
     @Test
     void save() {
