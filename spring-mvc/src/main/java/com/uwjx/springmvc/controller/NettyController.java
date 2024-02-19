@@ -25,4 +25,11 @@ public class NettyController  {
         return "ok";
     }
 
+    @PostMapping(value = "post")
+    public String post(){
+        log.warn("nettyName :" , nettyName);
+        log.warn("nettyPort :" , nettyPort);
+        return "ok POST";
+    }
+
 }

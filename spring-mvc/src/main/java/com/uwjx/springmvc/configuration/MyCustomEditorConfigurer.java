@@ -24,6 +24,6 @@ public class MyCustomEditorConfigurer implements PropertyEditorRegistrar {
     @Override
     public void registerCustomEditors(PropertyEditorRegistry registry) {
         log.warn("注册自定义 DatePropertyEditor");
-        registry.registerCustomEditor(String.class , datePropertyEditor);
+//        registry.registerCustomEditor(String.class , datePropertyEditor);
     }
 }

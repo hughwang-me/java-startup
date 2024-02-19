@@ -14,23 +14,23 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import java.util.List;
 
-@Configuration
+//@Configuration
 @Slf4j
 public class SpringMvcConfiguration implements WebMvcConfigurer {
 
-    @Autowired
-    PersonArgumentResolver personArgumentResolver;
+//    @Autowired
+//    PersonArgumentResolver personArgumentResolver;
 
     @Override
     public void addFormatters(FormatterRegistry registry) {
         log.warn("添加 WebMvcConfigurer addFormatters");
-        registry.addConverter(ProductRequestVO.class , BRequestVO.class , new MyConverter());
-        registry.addConverter(new StringToBRequestConverter());
+//        registry.addConverter(ProductRequestVO.class , BRequestVO.class , new MyConverter());
+//        registry.addConverter(new StringToBRequestConverter());
     }
 
     @Override
     public void addArgumentResolvers(List<HandlerMethodArgumentResolver> resolvers) {
         log.warn("添加 WebMvcConfigurer addArgumentResolvers");
-        resolvers.add(personArgumentResolver);
+//        resolvers.add(personArgumentResolver);
     }
 }
