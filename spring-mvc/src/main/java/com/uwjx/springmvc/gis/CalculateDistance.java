@@ -185,7 +185,7 @@ public class CalculateDistance {
      * @param pointLat 要判断的点的纬度
      * @param lon      区域各顶点的经度数组
      * @param lat      区域各顶点的纬度数组
-     * @return true：范围内; false：范围外
+     * @return true：范围内; false：范围外1
      */
     public static boolean isInPolygon(double pointLon, double pointLat, double[] lon, double[] lat) {
         // 将要判断的横纵坐标组成一个点
