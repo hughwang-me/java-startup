@@ -7,12 +7,12 @@ import org.springframework.stereotype.Component;
 
 @Slf4j
 @Component
-public class CacheTask {
+public class LocalMyCacheTask {
 
     @Scheduled(fixedRate = 1000 * 5)
     public void task(){
-        log.warn("执行缓存定时任务");
-        CacheManager.getInstance().set("time" , DateUtil.current());
-        log.warn("执行结果:{}" , CacheManager.getInstance().get("time"));
+//        log.warn("执行缓存定时任务");
+//        LocalMyCacheManager.getInstance().set("time" , DateUtil.current());
+//        log.warn("执行结果:{}" , LocalMyCacheManager.getInstance().get("time"));
     }
 }

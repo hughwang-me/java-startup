@@ -14,3 +14,15 @@ knife4j:
   enable: true
   setting:
     language: zh_cn
+
+spring:
+  cache:
+    type: caffeine
+    caffeine:
+      spec: maximumSize=500,expireAfterWrite=1m
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://127.0.0.1:5432/java-startup
+    username: postgres
+    password: uwJx@Andy27jfyHdcm
+    type: com.zaxxer.hikari.HikariDataSource

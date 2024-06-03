@@ -8,17 +8,17 @@ import java.util.Map;
 
 @Component
 @Slf4j
-public class CacheManager {
-    private static CacheManager cacheManager;
+public class LocalMyCacheManager {
+    private static LocalMyCacheManager localMyCacheManager;
 
-    private CacheManager() {
+    private LocalMyCacheManager() {
     }
 
-    public static CacheManager getInstance() {
-        if (cacheManager == null) {
-            cacheManager = new CacheManager();
+    public static LocalMyCacheManager getInstance() {
+        if (localMyCacheManager == null) {
+            localMyCacheManager = new LocalMyCacheManager();
         }
-        return cacheManager;
+        return localMyCacheManager;
     }
 
     private  Map<String , String> cached = new HashMap<>();
