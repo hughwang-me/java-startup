@@ -1,13 +1,14 @@
 package com.uwjx.springmvc.dal.entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.math.BigDecimal;
 
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "caffeine_user", schema = "wanghuan")
 public class CaffeineUser {
@@ -21,7 +22,7 @@ public class CaffeineUser {
     private String name;
 
     @Column(name = "age")
-    private BigDecimal age;
+    private Integer age;
 
     @Column(name = "mark", length = Integer.MAX_VALUE)
     private String mark;

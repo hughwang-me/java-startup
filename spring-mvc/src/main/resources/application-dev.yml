@@ -26,3 +26,5 @@ spring:
     username: postgres
     password: uwJx@Andy27jfyHdcm
     type: com.zaxxer.hikari.HikariDataSource
+  jpa:
+    show-sql: true
