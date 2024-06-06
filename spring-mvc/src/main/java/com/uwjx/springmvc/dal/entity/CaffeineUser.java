@@ -14,7 +14,7 @@ import java.math.BigDecimal;
 public class CaffeineUser {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "caffeine_user_id_gen")
-    @SequenceGenerator(name = "caffeine_user_id_gen", sequenceName = "caffeine_user_id_seq", allocationSize = 1)
+    @SequenceGenerator(name = "caffeine_user_id_gen", sequenceName = "wanghuan.caffeine_user_id_seq", allocationSize = 1)
     @Column(name = "id", nullable = false)
     private Integer id;
 
