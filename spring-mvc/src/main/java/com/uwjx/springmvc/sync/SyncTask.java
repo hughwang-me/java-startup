@@ -18,16 +18,21 @@ public class SyncTask {
     @Resource
     SyncService syncService;
 
-    @Scheduled(fixedRate = 1000 * 2)
+    @Scheduled(fixedRate = 1000 * 2000)
     public void task() {
-        log.info("开始执行同步插入");
+
 
         JsKafkaPda jsKafkaPda = new JsKafkaPda();
         String threadName = Thread.currentThread().getName();
         jsKafkaPda.setPhone(1);
         jsKafkaPda.setName(threadName);
         jsKafkaPda.setDate(Instant.now());
-        syncService.save2Db(jsKafkaPda);
+
+//        log.info("开始执行同步插入 {}" , threadName);
+        for (int i = 0; i < 10; i++) {
+            syncService.save2Db(jsKafkaPda);
+        }
+
 
 //        CaffeineUser caffeineUser = new CaffeineUser();
 //        String threadName = Thread.currentThread().getName();
