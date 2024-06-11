@@ -1,0 +1,6 @@
+version: '3'
+services:
+  trino-master:
+    image: trinodb/trino:latest
+    ports:
+      - 28080:8080

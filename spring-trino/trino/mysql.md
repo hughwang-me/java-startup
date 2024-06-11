@@ -1,0 +1,1 @@
+> docker run -d --name=mysql -p 13306:3306 -e MYSQL_ROOT_PASSWORD=h1@Andy27 mysql
